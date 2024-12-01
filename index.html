@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTEC Computer Education School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #003366;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-lists {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar-lists li {
+            margin: 0 15px;
+        }
+
+        .navbar-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-link:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Welcome Banner */
+        .school-img-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .school-img-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+
+        .school-img-container .img-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            background: rgba(0, 51, 102, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Vision Section */
+        .vision-section {
+            background: linear-gradient(to right, #0066cc, #004080);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .vision-heading {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .vision-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Notice Board Section */
+        .notice-board-section {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        .notice-board-heading {
+            font-size: 28px;
+            font-weight: bold;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .notice-list {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .notice-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+        }
+
+        .notice-list .new-text {
+            display: inline-block;
+            background: #ff5722;
+            color: white;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            background: linear-gradient(to bottom right, #e0e0e0, #ffffff);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us-heading {
+            font-size: 32px;
+            color: #004080;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .about-us-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        /* Our Campus Section */
+.campus-section {
+    background: #f2f2f2;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.campus-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.campus-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.campus-image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.campus-image-gallery img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.campus-map iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+}
+
+@media (max-width: 768px) {
+    .campus-image-gallery {
+        flex-direction: column;
+    }
+
+    .campus-map iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+        /* Contact Form */
+        #contactForm {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #contactForm label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contactForm button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contactForm button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #003366;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            .navbar-lists {
+                display: none;
+                flex-direction: column;
+            }
+
+            .navbar-lists.responsive {
+                display: flex;
+                background-color: #003366;
+            }
+
+            .navbar-lists li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="https://www.gteceducation.com/">
+            <img src="gtec.jpg" alt="GTEC Computer Education School Logo">
+            <span class="brand-logo-name">GTEC COMPUTER EDUCATION SCHOOL</span>
+        </a>
+        <nav class="navbar">
+            <ul class="navbar-lists" id="myTopnav">
+                <li>
+                    <a class="navbar-link home-link" href="#"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a class="navbar-link about-link" href="#about-us-section"><i class="fas fa-user"></i> About Us</a>
+                </li>
+                <li>
+                    <a class="navbar-link contact-link" href="#contact-form"><i class="fas fa-envelope"></i> Contact Us</a>
+                </li>
+                <li>
+                    <a class="navbar-link service-link" href="#notice-board-section"><i class="fas fa-bullhorn"></i> Notice Board</a>
+                </li>
+                <li>
+                    <a class="navbar-link contact-link" href="#campus-on-map"><i class="fas fa-map-marked-alt"></i> Our Campus</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+
+    <section class="school-img-container">
+        <img src="gtec1.jpg" alt="School Image">
+        <div class="img-title">
+            <h1>Welcome to GTEC Computer Education School, Erattupetta</h1>
+        </div>
+    </section>
+
+    <section id="vision-section" class="vision-section">
+        <h2 class="vision-heading">Our Vision</h2>
+        <p class="vision-text">
+            GTEC aims to provide high-quality computer education and empower students to excel in the digital world.
+        </p>
+    </section>
+
+    <section id="notice-board-section" class="notice-board-section">
+        <h2 class="notice-board-heading">Notice Board</h2>
+        <ul class="notice-list">
+            <li>
+                Admission is now open for 2024!
+                <span class="new-text">New</span>
+            </li>
+            <li>
+                New course available: Data Science 101
+            </li>
+            <li>
+                Important Gtec holiday: December 25th.
+            </li>
+        </ul>
+    </section>
+
+    <section id="about-us-section" class="about-us-section">
+        <h2 class="about-us-heading">About Us</h2>
+        <p class="about-us-text">
+            GTEC is a premier institution offering a wide range of computer education programs. Our vision is to equip students with the skills they need to succeed in the digital age.
+        </p>
+    </section>
+    
+    <section id="campus-on-map" class="campus-section">
+        <h2 class="campus-heading">Our Campus</h2>
+        <p class="campus-description">
+            Our campus is located in the heart of Erattupetta, offering a state-of-the-art learning environment with all the necessary facilities to support students' growth and development in the digital world.
+        </p>
+        <div class="campus-image-gallery">
+            <img src="campus1.jpg" alt="Campus Image 1">
+            <img src="campus2.jpg" alt="Campus Image 2">
+            <img src="campus3.jpg" alt="Campus Image 3">
+        </div>
+        <div class="campus-map">
+            <h3>Find Us Here:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dXXXX!2d-73.985!3d40.748817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1611587485557!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        </div>
+    </section>
+    
+
+    <section id="contact-form" class="contact-form-section">
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GTEC Computer Education School | BIJALI JAYALAKSHMI JAYAN</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar-lists") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar-lists";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
